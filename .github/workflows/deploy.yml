@@ -16,9 +16,9 @@ jobs:
       - name: Upload backend via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ${{ ftp.iklin.online }}
-          username: ${{ Autodeploy@iklin.online }}
-          password: ${{ V7;c^Y{1osI; }}
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /iklin.api/
           local-dir: ./backend
 
@@ -31,15 +31,14 @@ jobs:
 
       - name: Build frontend
         run: |
-          cd .
           npm install
           npm run build
 
       - name: Upload frontend build via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ${{ ftp.iklin.online }}
-          username: ${{ Autodeploy@iklin.online }}
-          password: ${{ V7;c^Y{1osI; }}
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /frontend_build/
           local-dir: ./dist
