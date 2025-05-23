@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy-backend:
-    name: Deploy Backend to /iklin.api
+    name: Deploy Backend to /iklin.api/
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -23,7 +23,7 @@ jobs:
           local-dir: ./backend/
 
   deploy-frontend:
-    name: Deploy Frontend (build) to /frontend_build
+    name: Deploy Frontend (build) to /frontend_build/
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
