@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingLayout from "./layout/LandingLayout";
 import DashboardLayout from "./layout/DashboardLayout";
+import PrivateRoute from "./routes/PrivateRoute";
 
 // LANDING PAGE //
 import HomeCarousel from "./pages/landing/Home";
@@ -17,13 +18,13 @@ import ManageUsers from "./pages/dashboard/ManageUser";
 import ProfilePage from "./pages/dashboard/Profile";
 import SettingsPage from "./pages/dashboard/SettingPage";
 import EditLandingPage from "./pages/dashboard/EditLandingPage";
-
-//AUTH PAGES //
-import Login from "./pages/auth/Login";
-import Register from "./pages/auth/Register";
 import ManageProduk from "./pages/dashboard/ManageProduk";
 import ManageArticles from "./pages/dashboard/ManageArticles";
 import ManageBanners from "./pages/dashboard/ManageBanners";
+
+// AUTH //
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
 
 function App() {
   return (
@@ -32,7 +33,8 @@ function App() {
         {/* AUTH ROUTES */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        {/* Landing Routes */}
+
+        {/* LANDING ROUTES */}
         <Route path="/" element={<LandingLayout />}>
           <Route
             index
@@ -55,8 +57,15 @@ function App() {
           <Route path="kontak" element={<ContactPage />} />
         </Route>
 
-        {/* Dashboard Routes */}
-        <Route path="/dashboard" element={<DashboardLayout />}>
+        {/* DASHBOARD ROUTES */}
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute>
+              <DashboardLayout />
+            </PrivateRoute>
+          }
+        >
           <Route index element={<DashboardHome />} />
           <Route path="manageusers" element={<ManageUsers />} />
           <Route path="manageproduk" element={<ManageProduk />} />
