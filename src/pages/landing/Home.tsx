@@ -51,7 +51,7 @@ export default function Home() {
       <AnimatePresence>
         <motion.img
           key={banners[index].id}
-          src={`http://localhost:5000${banners[index].imageUrl}`}
+          src={`https://api3.app.iklin.online${banners[index].imageUrl}`}
           initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
