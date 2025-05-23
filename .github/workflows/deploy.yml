@@ -1,0 +1,45 @@
+name: Deploy Backend & Frontend to Shared Hosting
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-backend:
+    name: Deploy Backend to /iklin.api
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Upload backend via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ ftp.iklin.online }}
+          username: ${{ Autodeploy@iklin.online }}
+          password: ${{ V7;c^Y{1osI; }}
+          server-dir: /iklin.api/
+          local-dir: ./backend
+
+  deploy-frontend:
+    name: Deploy Frontend (build) to /frontend_build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Build frontend
+        run: |
+          cd .
+          npm install
+          npm run build
+
+      - name: Upload frontend build via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ ftp.iklin.online }}
+          username: ${{ Autodeploy@iklin.online }}
+          password: ${{ V7;c^Y{1osI; }}
+          server-dir: /frontend_build/
+          local-dir: ./dist

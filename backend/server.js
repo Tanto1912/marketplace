@@ -1,16 +1,15 @@
-// server.js
 const express = require("express");
 const cors = require("cors");
+const dotenv = require("dotenv");
+const authRoutes = require("./routes/authRoutes");
+const usersRoutes = require("./routes/usersRoutes");
+const produkRoutes = require("./routes/produkRoutes");
+const postRoutes = require("./routes/postRoutes");
+const bannerRoutes = require("./routes/bannerRoutes");
+const path = require("path");
 const pool = require("./config/db.js");
 
-const productRoutes = require("./routes/productRoutes.js");
-const authRoutes = require("./routes/authRoutes.js");
-const userRoutes = require("./routes/userRoutes.js");
-const {
-  authenticateToken,
-  authorizeAdmin,
-} = require("./middlewares/authMiddleware.js");
-
+dotenv.config();
 const app = express();
 
 app.use(cors({
@@ -26,16 +25,13 @@ app.get("/", (req, res) => {
   res.send("API is running ✅");
 });
 
-// Product
-app.use("/products", productRoutes);
-app.use("/uploads", express.static("uploads"));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-// Users
-app.use("/api/auth", authRoutes);
-app.get("/api/admin", authenticateToken, authorizeAdmin, (req, res) => {
-  res.json({ message: "Selamat datang admin!" });
-});
-app.use("/api", userRoutes);
+app.use("/auth", authRoutes);
+app.use("/api/users", usersRoutes);
+app.use("/produk", produkRoutes);
+app.use("/api/articles", postRoutes);
+app.use("/api/banners", bannerRoutes);
 
 // Gunakan PORT dari environment (cPanel), fallback ke 3000
 const PORT = process.env.PORT || 3000;

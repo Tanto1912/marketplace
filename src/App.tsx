@@ -1,54 +1,74 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LandingPageIklin from "./pages/LandingPageIklin";
-import ProductList from "./pages/ProductList";
-import AddEditProduct from "./pages/AddEditProduct";
-import ProductDetail from "./pages/ProductDetail";
-import Navbar from "./iklin.online/Navbariklin";
-import ProductIklin from "./iklin.online/ProductIklin";
-import Hero from "./iklin.online/HeroIklin";
-import About from "./iklin.online/AboutIklin";
-import Contact from "./iklin.online/Contact";
-import Dashboard from "./pages/Dashboard";
-import DashboardLayout from "./layouts/DashboardLayout"; // import layout
-import LoginPage from "./pages/Login";
-import RegisterPage from "./pages/Register";
-import ManageUsers from "./pages/ManageUsers";
-import ProtectedRoute from "./components/ProtectedRoute";
+import LandingLayout from "./layout/LandingLayout";
+import DashboardLayout from "./layout/DashboardLayout";
 
-const App: React.FC = () => {
+// LANDING PAGE //
+import HomeCarousel from "./pages/landing/Home";
+import CardSection from "./components/card/CardSection";
+import ProductPage from "./pages/landing/Produk";
+import ServicePage from "./pages/landing/Service";
+import AboutPage from "./pages/landing/About";
+import ArticlePage from "./pages/landing/Article";
+import ContactPage from "./pages/landing/Contact";
+
+// DASHBOARD PAGES //
+import DashboardHome from "./pages/dashboard/Home";
+import ManageUsers from "./pages/dashboard/ManageUser";
+import ProfilePage from "./pages/dashboard/Profile";
+import SettingsPage from "./pages/dashboard/SettingPage";
+import EditLandingPage from "./pages/dashboard/EditLandingPage";
+
+//AUTH PAGES //
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
+import ManageProduk from "./pages/dashboard/ManageProduk";
+import ManageArticles from "./pages/dashboard/ManageArticles";
+import ManageBanners from "./pages/dashboard/ManageBanners";
+
+function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-pink-300">
-        <Routes>
-          <Route path="/dashboard" element={<ProtectedRoute>
-          <DashboardLayout /> </ProtectedRoute> }> <Route index element={<Dashboard />} />
-          </Route>
+      <Routes>
+        {/* AUTH ROUTES */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        {/* Landing Routes */}
+        <Route path="/" element={<LandingLayout />}>
+          <Route
+            index
+            element={
+              <>
+                <HomeCarousel />
+                <CardSection />
+                <ProductPage />
+                <ServicePage />
+                <AboutPage />
+                <ArticlePage />
+                <ContactPage />
+              </>
+            }
+          />
+          <Route path="produk" element={<ProductPage />} />
+          <Route path="layanan" element={<ServicePage />} />
+          <Route path="tentang" element={<AboutPage />} />
+          <Route path="artikel" element={<ArticlePage />} />
+          <Route path="kontak" element={<ContactPage />} />
+        </Route>
 
-          {/* Login Pages */}
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/login" element={<LoginPage />} />
-
-          {/* Public pages */}
-          <Route path="/" element={<LandingPageIklin />} />
-          <Route path="/navbariklin" element={<Navbar />} />
-          <Route path="/heroiklin" element={<Hero />} />
-          <Route path="/produkiklin" element={<ProductIklin />} />
-          <Route path="/aboutiklin" element={<About />} />
-          <Route path="/contactiklin" element={<Contact />} />
-
-          {/* Dashboard & admin pages with sidebar */}
-          <Route path="/dashboard" element={<DashboardLayout />}>
-            <Route index element={<Dashboard />} />
-            <Route path="products" element={<ProductList />} />
-            <Route path="/dashboard/manageusers" element={<ManageUsers />} />
-            <Route path="add" element={<AddEditProduct />} />
-            <Route path="edit/:id" element={<AddEditProduct />} />
-            <Route path="detail/:id" element={<ProductDetail />} />
-          </Route>
-        </Routes>
-      </div>
+        {/* Dashboard Routes */}
+        <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route index element={<DashboardHome />} />
+          <Route path="manageusers" element={<ManageUsers />} />
+          <Route path="manageproduk" element={<ManageProduk />} />
+          <Route path="managearticle" element={<ManageArticles />} />
+          <Route path="managebanner" element={<ManageBanners />} />
+          <Route path="settingpage" element={<SettingsPage />} />
+          <Route path="profile" element={<ProfilePage />} />
+          <Route path="editlandingpage" element={<EditLandingPage />} />
+        </Route>
+      </Routes>
     </Router>
   );
-};
+}
 
 export default App;

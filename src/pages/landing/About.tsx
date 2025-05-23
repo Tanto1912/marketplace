@@ -1,0 +1,35 @@
+import React from "react";
+
+const AboutPage: React.FC = () => {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-pink-100 to-pink-200 px-6 py-12 flex flex-col items-center">
+      <div className="max-w-4xl text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-pink-700 mb-6">
+          Tentang Kami
+        </h1>
+        <p className="text-pink-800 text-lg md:text-xl leading-relaxed mb-8">
+          Kami adalah brand yang berdedikasi untuk memberikan produk dan layanan
+          terbaik untuk kecantikan dan perawatan diri Anda. Sejak didirikan,
+          kami berkomitmen untuk memberikan pengalaman yang menyenangkan dan
+          hasil yang memuaskan bagi setiap pelanggan.
+        </p>
+        <p className="text-pink-800 text-base md:text-lg leading-relaxed mb-8">
+          Dengan tim profesional dan produk berkualitas tinggi, kami percaya
+          bahwa setiap orang berhak merasa cantik dan percaya diri setiap hari.
+          Kami selalu berinovasi dan mendengarkan kebutuhan pelanggan demi
+          memberikan solusi terbaik dalam setiap produk dan layanan kami.
+        </p>
+
+        <div className="mt-10">
+          <img
+            src="https://images.unsplash.com/photo-1588167056543-23c1b7a4d2f3?auto=format&fit=crop&w=900&q=60"
+            alt="Tentang Kami"
+            className="rounded-2xl shadow-md mx-auto w-full max-w-md"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AboutPage;
