@@ -20,7 +20,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /iklin.api/
-          local-dir: ./backend
+          local-dir: ./backend/
 
   deploy-frontend:
     name: Deploy Frontend (build) to /frontend_build
