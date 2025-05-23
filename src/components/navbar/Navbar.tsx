@@ -5,8 +5,6 @@ import {
   ShoppingBag,
   Bubbles,
   Sparkles,
-  SprayCan,
-  Droplets,
   Info,
   Phone,
   Home,
