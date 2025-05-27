@@ -3,7 +3,7 @@ const Footer: React.FC = () => {
     <footer className="bg-gradient-to-r from-pink-300 via-pink-200 to-pink-300 text-pink-900 py-8 px-6">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="text-center md:text-left text-sm">
-          &copy; {new Date().getFullYear()} Your Company. All rights reserved.
+          &copy; {new Date().getFullYear()} KCMGROUP@MazWeb All rights reserved.
         </div>
         <div className="flex space-x-6">
           <a
