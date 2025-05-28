@@ -1,7 +1,7 @@
 import { FaWhatsapp } from "react-icons/fa";
 import React from "react";
 
-const WhatsAppFloating: React.FC = () => {
+const WhatsappFloating: React.FC = () => {
   return (
     <div className="fixed bottom-15 left-1/2 transform -translate-x-1/2 z-50 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full shadow-lg flex items-center gap-4 transition">
       {/* Nama */}
@@ -28,4 +28,4 @@ const WhatsAppFloating: React.FC = () => {
   );
 };
 
-export default WhatsAppFloating;
+export default WhatsappFloating;
