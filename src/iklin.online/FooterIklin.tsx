@@ -5,7 +5,7 @@ const Footer = () => {
         <div className="text-center md:text-left">
           <h3 className="text-lg font-semibold mb-2">Sabun Berkualitas</h3>
           <p className="text-sm">
-            © {new Date().getFullYear()} @KCMGROUP. All rights reserved.
+            © {new Date().getFullYear()} @KCMGROUP.ID 
           </p>
         </div>
         <div className="flex space-x-6">

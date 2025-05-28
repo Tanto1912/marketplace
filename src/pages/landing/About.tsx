@@ -8,17 +8,20 @@ const AboutPage: React.FC = () => {
           Tentang Kami
         </h1>
         <p className="text-pink-800 text-lg md:text-xl leading-relaxed mb-8">
-          Kami adalah brand yang berdedikasi untuk memberikan produk dan layanan
-          terbaik untuk kecantikan dan perawatan diri Anda. Sejak didirikan,
-          kami berkomitmen untuk memberikan pengalaman yang menyenangkan dan
-          hasil yang memuaskan bagi setiap pelanggan.
+          Kami adalah brand yang berdedikasi untuk menghadirkan produk dan layanan terbaik
+          dalam bidang pembersih rumah tangga. Sejak awal berdiri, kami berkomitmen
+          untuk memberikan pengalaman yang menyenangkan serta hasil yang memuaskan
+          bagi setiap pelanggan.
+
         </p>
         <p className="text-pink-800 text-base md:text-lg leading-relaxed mb-8">
-          Dengan tim profesional dan produk berkualitas tinggi, kami percaya
-          bahwa setiap orang berhak merasa cantik dan percaya diri setiap hari.
-          Kami selalu berinovasi dan mendengarkan kebutuhan pelanggan demi
-          memberikan solusi terbaik dalam setiap produk dan layanan kami.
-        </p>
+          Dengan dukungan tim profesional dan produk berkualitas tinggi,
+          kami percaya bahwa setiap individu berhak merasa percaya diri setiap hari.
+          Inovasi dan kepedulian terhadap kebutuhan pelanggan menjadi dasar
+          dari setiap langkah kami, demi menghadirkan solusi terbaik melalui
+          setiap produk dan layanan yang kami tawarkan.        
+          
+          </p>
 
         <div className="mt-10">
           <img
