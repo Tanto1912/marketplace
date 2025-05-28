@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
+
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <a href="/" className="flex items-center space-x-2 select-none">
-          <Image src="/Logo2.png" alt="Iklin Logo" width={32} height={32} />
+          <img src="/Logo2.png" alt="Iklin Logo" className="h-8 w-8" />
           <span className="text-2xl font-bold text-pink-600 dark:text-pink-400">
           Iklin.online
           </span>
