@@ -22,7 +22,7 @@ const AboutPage: React.FC = () => {
 
         <div className="mt-10">
           <img
-            src="https://images.unsplash.com/photo-1588167056543-23c1b7a4d2f3?auto=format&fit=crop&w=900&q=60"
+            src="/Logo2.png"
             alt="Tentang Kami"
             className="rounded-2xl shadow-md mx-auto w-full max-w-md"
           />
