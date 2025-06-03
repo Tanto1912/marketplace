@@ -14,7 +14,6 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Build frontend
-        working-directory: ./frontend
         run: |
           npm install
           npm run build
@@ -25,6 +24,5 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /frontend_build/dist/
-          local-dir: ./frontend/dist/
-          
+          server-dir: /frontend_build/
+          local-dir: ./dist/
