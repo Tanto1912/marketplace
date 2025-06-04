@@ -7,7 +7,6 @@ on:
 
 jobs:
   deploy-frontend:
-    name: Deploy Frontend (build) to /frontend_build/
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -18,11 +17,14 @@ jobs:
           npm install
           npm run build
 
+      - name: Show files in dist
+        run: ls -la ./dist
+
       - name: Upload frontend build via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: frontend_build/
+          server-dir: ./frontend_build/
           local-dir: ./dist/
