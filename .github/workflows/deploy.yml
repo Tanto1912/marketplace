@@ -18,7 +18,7 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies and build
-        working-directory: ./frontend # sesuaikan jika perlu
+        working-directory: ./frontend_build # sesuaikan jika perlu
         run: |
           npm install
           npm run build
@@ -31,4 +31,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           server-dir: /frontend_build/
-          local-dir: ./frontend/dist/
+          local-dir: ./dist/
