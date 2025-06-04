@@ -7,50 +7,28 @@ on:
 
 jobs:
   deploy-frontend:
-    name: Build and Deploy Frontend to /frontend_build
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-<<<<<<< HEAD
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
       - name: Install dependencies and build
-        working-directory: ./frontend # sesuaikan jika folder frontend di dalam folder
-=======
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18' # sesuaikan jika kamu pakai versi lain
-
-      - name: Install dependencies and  build
-        working-directory: ./frontend # sesuaikan jika folder frontend di dalam folder lain
+        working-directory: ./frontend # sesuaikan jika perlu
         run: |
           npm install
           npm run build
 
-<<<<<<< HEAD
       - name: Upload build via FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-=======
-      - name: Upload via FTPS
-        uses: sebastianpopp/ftp-action@v1.3.3
->>>>>>> 3ed915c0eb5fbae87bd3b8959f86d2fd96c040b0
         with:
-          host: ${{ secrets.FTP_HOST }}
-          user: ${{ secrets.FTP_USERNAME }}
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-<<<<<<< HEAD
           protocol: ftps
           server-dir: /frontend_build/
           local-dir: ./frontend/dist/
-=======
-          localDir: ./dist
-          remoteDir: /frontend_build
-          protocol: ftps
->>>>>>> 3ed915c0eb5fbae87bd3b8959f86d2fd96c040b0
