@@ -18,7 +18,6 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies and build
-        working-directory: ./frontend_build # sesuaikan jika perlu
         run: |
           npm install
           npm run build
