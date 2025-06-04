@@ -1,4 +1,4 @@
-name: Deploy Frontend to Shared Hosting
+name: Deploy Frontend via FTPS
 
 on:
   push:
@@ -7,24 +7,29 @@ on:
 
 jobs:
   deploy-frontend:
+    name: Build and Deploy Frontend to /frontend_build
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Build frontend
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # sesuaikan jika kamu pakai versi lain
+
+      - name: Install dependencies and build
         run: |
           npm install
           npm run build
 
-      - name: Show files in dist
-        run: ls -la ./dist
-
-      - name: Upload frontend build via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Upload via FTPS
+        uses: sebastianpopp/ftp-action@v1.3.3
         with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
+          host: ${{ secrets.FTP_HOST }}
+          user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ./frontend_build/
-          local-dir: ./dist/
+          localDir: ./dist
+          remoteDir: /frontend_build
+          protocol: ftps
