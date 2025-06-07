@@ -60,7 +60,7 @@ const ManagePost = () => {
     setContent(post.content);
     setCategory(post.category);
     setPreviewImage(
-      post.image ? `https://api3.app.iklin.online/uploads/${post.image}` : null
+      post.image ? `https://api4.app.iklin.online/uploads/${post.image}` : null
     );
     setCurrentId(post.id);
     setIsEditing(true);
@@ -149,7 +149,7 @@ const ManagePost = () => {
             </p>
             {post.image && (
               <img
-                src={`https://api3.app.iklin.online/uploads/${post.image}`}
+                src={`https://api4.app.iklin.online/uploads/${post.image}`}
                 alt={post.title}
                 className="w-full rounded-lg object-cover max-h-48 mb-4 shadow-md"
               />

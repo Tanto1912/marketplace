@@ -113,7 +113,7 @@ export default function ManageBanners() {
             className="bg-white shadow-md rounded-lg overflow-hidden"
           >
             <img
-              src={`https://api3.app.iklin.online${banner.imageUrl}`}
+              src={`https://api4.app.iklin.online${banner.imageUrl}`}
               alt={banner.title}
               className="w-full h-40 object-cover"
             />

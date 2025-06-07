@@ -29,7 +29,7 @@ export const isAuthenticated = async (): Promise<boolean> => {
   if (!token) return false;
 
   try {
-    const res = await fetch("https://api3.app.iklin.online/api/auth/verify", {
+    const res = await fetch("https://api4.app.iklin.online/api/auth/verify", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -50,7 +50,7 @@ export const getUser = async () => {
   if (!token) return null;
 
   try {
-    const res = await fetch("https://api3.app.iklin.online/api/auth/verify", {
+    const res = await fetch("https://api4.app.iklin.online/api/auth/verify", {
       headers: {
         Authorization: `Bearer ${token}`,
       },

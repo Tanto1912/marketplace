@@ -23,7 +23,7 @@ const AddEditProduct: React.FC = () => {
         });
         setPreview(
           res.data.image_url
-            ? `https://api3.app.iklin.online${res.data.image_url}`
+            ? `https://api4.app.iklin.online${res.data.image_url}`
             : null
         );
       });

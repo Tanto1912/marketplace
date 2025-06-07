@@ -35,7 +35,7 @@ const ProductDetail: React.FC = () => {
 
       {product.image_url && (
         <img
-          src={`https://api3.app.iklin.online${product.image_url}`}
+          src={`https://api4.app.iklin.online${product.image_url}`}
           alt={product.title}
           className="w-full h-64 object-cover rounded"
         />

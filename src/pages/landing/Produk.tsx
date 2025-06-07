@@ -28,7 +28,7 @@ const ProductPage: React.FC = () => {
             name: productName,
             price: item.harga ? Number(item.harga) : 0,
             image: item.gambar
-              ? `https://api3.app.iklin.online/uploads/${item.gambar}`
+              ? `https://api4.app.iklin.online/uploads/${item.gambar}`
               : "https://via.placeholder.com/300x200?text=No+Image",
             category: firstWordCategory,
           };

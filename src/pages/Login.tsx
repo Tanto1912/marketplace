@@ -14,7 +14,7 @@ const LoginPage: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://api3.app.iklin.online/api/auth/login", {
+      const res = await axios.post("https://api4.app.iklin.online/api/auth/login", {
         username,
         password,
       });

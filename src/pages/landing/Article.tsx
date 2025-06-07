@@ -31,7 +31,7 @@ const ArticlePage: React.FC = () => {
         content: article.content,
         date: article.created_at || article.date,
         imageUrl: article.image
-          ? `https://api3.app.iklin.online/uploads/${article.image}`
+          ? `https://api4.app.iklin.online/uploads/${article.image}`
           : "", // sesuaikan dengan lokasi file backend
       }));
       setArticles(data);

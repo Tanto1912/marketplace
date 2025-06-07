@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://api3.app.iklin.online", // ganti sesuai alamat backend
+  baseURL: "https://api4.app.iklin.online", // ganti sesuai alamat backend
   withCredentials: false, // biasanya false kalau pakai JWT di header
 });
 

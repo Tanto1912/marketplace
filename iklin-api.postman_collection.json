@@ -16,9 +16,9 @@
           "raw": "{\n  \"username\": \"testuser\",\n  \"password\": \"123456\"\n}"
         },
         "url": {
-          "raw": "https://api3.app.iklin.online/api/auth/register",
+          "raw": "https://api4.app.iklin.online/api/auth/register",
           "protocol": "https",
-          "host": ["api3", "app", "iklin", "online"],
+          "host": ["api4", "app", "iklin", "online"],
           "path": ["api", "auth", "register"]
         }
       }
@@ -33,9 +33,9 @@
           "raw": "{\n  \"username\": \"testuser\",\n  \"password\": \"123456\"\n}"
         },
         "url": {
-          "raw": "https://api3.app.iklin.online/api/auth/login",
+          "raw": "https://api4.app.iklin.online/api/auth/login",
           "protocol": "https",
-          "host": ["api3", "app", "iklin", "online"],
+          "host": ["api4", "app", "iklin", "online"],
           "path": ["api", "auth", "login"]
         }
       }
@@ -48,9 +48,9 @@
           { "key": "Authorization", "value": "Bearer {{token}}" }
         ],
         "url": {
-          "raw": "https://api3.app.iklin.online/api/users",
+          "raw": "https://api4.app.iklin.online/api/users",
           "protocol": "https",
-          "host": ["api3", "app", "iklin", "online"],
+          "host": ["api4", "app", "iklin", "online"],
           "path": ["api", "users"]
         }
       }
@@ -63,9 +63,9 @@
           { "key": "Authorization", "value": "Bearer {{token}}" }
         ],
         "url": {
-          "raw": "https://api3.app.iklin.online/api/admin",
+          "raw": "https://api4.app.iklin.online/api/admin",
           "protocol": "https",
-          "host": ["api3", "app", "iklin", "online"],
+          "host": ["api4", "app", "iklin", "online"],
           "path": ["api", "admin"]
         }
       }

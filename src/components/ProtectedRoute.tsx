@@ -15,7 +15,7 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
       }
 
       try {
-        const res = await fetch("https://api3.app.iklin.online/api/auth/verify", {
+        const res = await fetch("https://api4.app.iklin.online/api/auth/verify", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
