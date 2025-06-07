@@ -21,7 +21,7 @@ const ArticlePage: React.FC = () => {
     setLoading(true);
     setError(null);
     try {
-      const res = await api.get("/api/articles");
+      const res = await api.get("/api/api/articles");
       // Pastikan backend mengirim data dengan key yang sesuai, misal `image` atau `imageUrl`
       // Kalau backend pakai `image` misal, bisa mapping seperti ini:
       const data = res.data.map((article: any) => ({

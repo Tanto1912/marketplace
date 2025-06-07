@@ -22,7 +22,7 @@ const ManageUser: React.FC = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await api.get<User[]>("/api/users");
+      const res = await api.get<User[]>("/api/api/users");
       setUsers(res.data);
     } catch (error: any) {
       alert(
@@ -39,7 +39,7 @@ const ManageUser: React.FC = () => {
   const deleteUser = async (id: number) => {
     if (!window.confirm("Are you sure you want to delete this user?")) return;
     try {
-      await api.delete(`/api/users/${id}`);
+      await api.delete(`/api/api/users/${id}`);
       fetchUsers();
     } catch {
       alert("Failed to delete user");
@@ -58,7 +58,7 @@ const ManageUser: React.FC = () => {
 
   const saveEdit = async (id: number) => {
     try {
-      await api.put(`/api/users/${id}`, form);
+      await api.put(`/api/api/users/${id}`, form);
       setEditUserId(null);
       fetchUsers();
     } catch {
@@ -87,7 +87,7 @@ const ManageUser: React.FC = () => {
       return;
     }
     try {
-      await api.post("/api/users", addForm);
+      await api.post("/api/api/users", addForm);
       setAddForm({ username: "", password: "", role: "user" });
       setShowAddForm(false);
       fetchUsers();
@@ -98,7 +98,7 @@ const ManageUser: React.FC = () => {
 
   const handleApproveUser = async (id: number) => {
     try {
-      await api.put(`/api/users/approve/${id}`);
+      await api.put(`/api/api/users/approve/${id}`);
       fetchUsers();
     } catch {
       alert("Failed to approve user");

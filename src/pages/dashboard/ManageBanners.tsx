@@ -20,7 +20,7 @@ export default function ManageBanners() {
 
   const fetchBanners = async () => {
     try {
-      const res = await api.get("/api/banners");
+      const res = await api.get("/api/api/banners");
       setBanners(res.data);
     } catch (error) {
       console.error(error);
@@ -58,11 +58,11 @@ export default function ManageBanners() {
 
     try {
       if (editId === null) {
-        await api.post("/api/banners", formData, {
+        await api.post("/api/api/banners", formData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
       } else {
-        await api.put(`/api/banners/${editId}`, formData, {
+        await api.put(`/api/api/banners/${editId}`, formData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
       }
@@ -78,7 +78,7 @@ export default function ManageBanners() {
     if (!confirm("Yakin ingin menghapus banner ini?")) return;
 
     try {
-      await api.delete(`/api/banners/${id}`);
+      await api.delete(`/api/api/banners/${id}`);
       fetchBanners();
     } catch (error) {
       console.error(error);

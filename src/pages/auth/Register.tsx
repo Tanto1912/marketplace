@@ -35,7 +35,7 @@ const Register = () => {
     setError("");
 
     try {
-      const response = await api.post("/auth/register", {
+      const response = await api.post("/api/auth/register", {
         username,
         password,
       });

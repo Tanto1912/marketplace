@@ -19,7 +19,7 @@ const RegisterPage: React.FC = () => {
       return;
     }
     try {
-      await axios.post("/api/auth/register", {
+      await axios.post("/api/api/auth/register", {
         username,
         password,
       });

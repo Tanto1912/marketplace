@@ -32,7 +32,7 @@ export default function ManageProduk() {
 
   const fetchProduk = async () => {
     try {
-      const res = await api.get<Produk[]>("/api/produk");
+      const res = await api.get<Produk[]>("/api/api/produk");
       setProdukList(res.data);
     } catch {
       alert("Gagal mengambil data produk");
@@ -71,9 +71,9 @@ export default function ManageProduk() {
       if (form.gambar) formData.append("gambar", form.gambar);
 
       if (editId === null) {
-        await api.post("/api/produk", formData);
+        await api.post("/api/api/produk", formData);
       } else {
-        await api.put(`/api/produk/${editId}`, formData);
+        await api.put(`/api/api/produk/${editId}`, formData);
       }
 
       setForm({ nama: "", harga: "", keterangan: "", gambar: null });
@@ -102,7 +102,7 @@ export default function ManageProduk() {
     if (!window.confirm("Yakin hapus produk ini?")) return;
 
     try {
-      await api.delete(`/api/produk/${id}`);
+      await api.delete(`/api/api/produk/${id}`);
       fetchProduk();
     } catch {
       alert("Gagal hapus produk");

@@ -25,7 +25,7 @@ export default function Home() {
   useEffect(() => {
     const fetchBanners = async () => {
       try {
-        const res = await api.get("/api/banners");
+        const res = await api.get("/api/api/banners");
         setBanners(res.data);
       } catch (error) {
         console.error(error);

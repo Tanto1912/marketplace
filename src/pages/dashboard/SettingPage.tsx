@@ -19,7 +19,7 @@ export default function SettingPage() {
     try {
       setLoading(true);
       setMessage("");
-      await api.post("/auth/change-password", {
+      await api.post("/api/api/auth/change-password", {
         currentPassword,
         newPassword,
       });

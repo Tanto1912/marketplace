@@ -34,7 +34,7 @@ const ProductList: React.FC = () => {
   const handleDelete = async (id: number) => {
     if (!confirm("Yakin ingin menghapus produk ini?")) return;
     try {
-      await api.delete(`/products/${id}`);
+      await api.delete(`/api/products/${id}`);
       fetchProducts();
     } catch (err) {
       console.error(err);
