@@ -25,7 +25,7 @@ const ProductIklin: React.FC = () => {
 
   useEffect(() => {
     api
-      .get("/products/public-products")
+      .get("`${baseUrl}/products/public-products")
       .then((res) => {
         const fetched = Array.isArray(res.data) ? res.data : [];
         setProducts(fetched);
