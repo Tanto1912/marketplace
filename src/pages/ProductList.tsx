@@ -13,7 +13,7 @@ const ProductList: React.FC = () => {
 
   const fetchProducts = async () => {
     try {
-      const res = await api.get("/products", {
+      const res = await api.get("/api/products", {
         params: {
           search,
           page,
