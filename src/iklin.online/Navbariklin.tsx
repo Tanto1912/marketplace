@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
 
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "Produk", href: "/produkiklin" },
+    { name: "Produk", href: "/api/produkiklin" },
     { name: "About", href: "/aboutiklin" },
     { name: "Contact", href: "/contactiklin" },
   ];
