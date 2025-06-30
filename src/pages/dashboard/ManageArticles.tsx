@@ -26,7 +26,7 @@ const ManagePost = () => {
   // Fetch posts
   const fetchPosts = async () => {
     try {
-      const response = await api.get("/api/api/articles");
+      const response = await api.get("/api/articles");
       setPosts(response.data);
     } catch (error) {
       console.error("Gagal mengambil data postingan:", error);
@@ -79,9 +79,9 @@ const ManagePost = () => {
 
     try {
       if (isEditing && currentId !== null) {
-        await api.put(`/api/api/articles/${currentId}`, formData);
+        await api.put(`/api/articles/${currentId}`, formData);
       } else {
-        await api.post("/api/api/articles", formData);
+        await api.post("/api/articles", formData);
       }
       fetchPosts();
       setModalOpen(false);
@@ -95,7 +95,7 @@ const ManagePost = () => {
   const handleDelete = async (id: number) => {
     if (!confirm("Apakah yakin ingin menghapus postingan ini?")) return;
     try {
-      await api.delete(`/api/api/articles/${id}`);
+      await api.delete(`/api/articles/${id}`);
       fetchPosts();
     } catch (error) {
       console.error("Gagal menghapus postingan:", error);

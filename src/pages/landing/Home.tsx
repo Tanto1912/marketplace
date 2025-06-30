@@ -7,7 +7,7 @@ type Banner = {
   id: number;
   title: string;
   subtitle: string;
-  imageUrl: string;
+  imageurl: string;
 };
 
 export default function Home() {
@@ -25,7 +25,7 @@ export default function Home() {
   useEffect(() => {
     const fetchBanners = async () => {
       try {
-        const res = await api.get("/api/api/banners");
+        const res = await api.get("/api/banners");
         setBanners(res.data);
       } catch (error) {
         console.error(error);
@@ -51,12 +51,12 @@ export default function Home() {
       <AnimatePresence>
         <motion.img
           key={banners[index].id}
-          src={`https://api4.app.iklin.online${banners[index].imageUrl}`}
+          src={`https://api4.app.iklin.online${banners[index].imageurl}`}
           initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.6 }}
-          className="absolute w-full h-full object-cover"
+          className="absolute w-full h-full object-cover max-w-full max-h-full rounded-lg shadow-lg"
         />
       </AnimatePresence>
 

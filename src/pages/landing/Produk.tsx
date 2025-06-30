@@ -18,7 +18,7 @@ const ProductPage: React.FC = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await api.get<any[]>("/api/api/produk");
+        const res = await api.get<any[]>("/api/produk");
         const mappedProducts: Product[] = res.data.map((item) => {
           const productName = item.nama || "Produk tanpa nama";
           const firstWordCategory = productName.split(" ")[0] || "Lainnya";
