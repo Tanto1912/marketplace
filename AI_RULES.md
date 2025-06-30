@@ -1,8 +1,8 @@
-# AI Development Rules for I-Klin App
+# AI Development Rules for I-Klin App (JavaScript Version)
 
 ## Tech Stack Overview
 
-- **Frontend**: React 19 with TypeScript
+- **Frontend**: React 19 with JavaScript
 - **Styling**: Tailwind CSS with custom variants
 - **State Management**: React Context + Local Storage (for auth)
 - **Routing**: React Router v7
@@ -10,7 +10,7 @@
 - **Icons**: Lucide React + React Icons
 - **HTTP Client**: Axios with interceptors
 - **Form Handling**: Native React forms with custom validation
-- **UI Components**: Primarily custom-built with some shadcn/ui components
+- **UI Components**: Primarily custom-built components
 - **Bundler**: Vite with React plugin
 
 ## Library Usage Rules
@@ -19,6 +19,7 @@
 - Use React Context for global state (auth, theme)
 - Local Storage ONLY for auth persistence
 - NO Redux/MobX - keep state simple and colocated
+- PropTypes for basic prop validation (optional)
 
 ### 2. Styling
 - Tailwind CSS for ALL styling
@@ -28,7 +29,7 @@
 
 ### 3. HTTP Requests
 - Axios ONLY for API calls
-- All API calls must go through the configured `api.ts` instance
+- All API calls must go through configured `api.js` instance
 - NO fetch() directly - use the axios wrapper
 
 ### 4. Forms
@@ -43,8 +44,8 @@
 
 ### 6. UI Components
 - Custom components first
-- shadcn/ui components ONLY when necessary
 - NO Material UI/Ant Design - maintain custom design system
+- Use propTypes for documentation if needed
 
 ### 7. Icons
 - Lucide React as primary icon library
@@ -54,7 +55,7 @@
 ### 8. Routing
 - React Router for ALL routing
 - NO next.js routing or other alternatives
-- Keep routes in App.tsx
+- Keep routes in App.js
 
 ### 9. Error Handling
 - Try/catch ONLY at API call boundaries
@@ -66,17 +67,17 @@
 - Mock Service Worker for API mocking
 - NO Enzyme - use modern React testing practices
 
-## Best Practices
+## JavaScript Best Practices
 
 1. **Component Structure**:
-   - One component per file
+   - One component per file (.js extension)
    - Max 150 lines per component
    - Split into presentational and container components
 
-2. **TypeScript**:
-   - Strict mode always enabled
-   - No `any` type - use proper types/interfaces
-   - Types must be in `/types` directory
+2. **Type Safety**:
+   - Use JSDoc comments for documentation
+   - Consider PropTypes for basic validation
+   - Consistent parameter validation
 
 3. **Performance**:
    - React.memo for expensive renders
@@ -102,6 +103,6 @@
 ❌ Global CSS styles  
 ❌ Any libraries not in package.json  
 ❌ console.log in production code  
-❌ Ignoring TypeScript errors  
 ❌ Mixing CSS methodologies  
-❌ Over-optimizing prematurely
+❌ Over-optimizing prematurely  
+❌ Inconsistent error handling patterns
